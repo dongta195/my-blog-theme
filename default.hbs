@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>{{meta_title}}</title>
+    {{> meta}}
+    <link href='https://fonts.googleapis.com/css?family=Raleway:400,600%7CRoboto+Slab:300,400' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="{{asset "css/uno-zen.css"}}" />
+    {{ghost_head}}
+    <script>
+       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+       })(window,document,'script','../www.google-analytics.com/analytics.js','ga');
+
+       ga('create', 'UA-104840979-1', 'auto');
+       ga('send', 'pageview');
+    </script>
+   </head>
+  <body>
+    {{> header }}
+    {{ navigation }}
+
+    <div class="site site--home">
+       <div class="site__content">
+          <div class="site site--home">
+             <div class="essays essays--home">
+                {{{body}}}
+             </div>
+             <div id="fb-root"></div>
+             <script>(function(d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) return;
+                js = d.createElement(s); js.id = id;
+                js.src = "../connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.10";
+                fjs.parentNode.insertBefore(js, fjs);
+                }(document, 'script', 'facebook-jssdk'));
+             </script>
+             <!--<div class="fb-page" data-href="https://www.facebook.com/quancam.blog" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">-->
+                <!--<blockquote cite="https://www.facebook.com/quancam.blog" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/quancam.blog">Quần Cam</a></blockquote>-->
+             <!--</div>-->
+             <hr class="posts-line" noshade/>
+          </div>
+       </div>
+    </div>
+  {{> footer }}
+  <script src="assets/js/main.js"></script>
+  {{> google-analytics}}
+  </body>
+   <!-- Mirrored from quan-cam.com/ by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 11 Sep 2018 07:54:33 GMT -->
+</html>

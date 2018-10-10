@@ -1,0 +1,29 @@
+{{!< default}}
+
+{{#foreach posts}}
+<div class="post">
+   <h3 class="post__title">
+      <a href="{{url}}">{{title}}</a>
+   </h3>
+   <div class="post__intro">
+      <p>{{excerpt}}</p>
+   </div>
+   <div class="post__metadata">
+      <time datetime="{{date format="ddd, D MMMM, YYYY"}}" class="post__creation-date">
+      {{date format="ddd, D MMMM, YYYY"}}</time>
+      <span class="post__reading-time">{{reading_time}}</span>
+      <!--<span class="post__reading-time">-->
+        <!--<i class="fa fa-comment-alt"></i>-->
+          <!--2 bình luận-->
+      <!--</span>-->
+      <span class="tagging">
+      {{#if tags}}
+        {{#foreach tags}}
+            <a href="{{url}}" title="{{name}}" class="tagging__item">#{{name}}</a>
+        {{/foreach}}
+      {{/if}}
+      </span>
+   </div>
+</div>
+{{/foreach}}
+{{ pagination }}

@@ -1,0 +1,9 @@
+<div class="browse-more">
+  {{#if prev}}
+  <a rel="next" class="browse-more__item" href="{{page_url prev}}#open">&larr; Đọc lại</a>
+  {{/if}}
+  <span class="posts index">Trang {{page}} trên {{pages}}</span>
+  {{#if next}}
+  <a rel="prev" class="browse-more__item" href="{{page_url next}}#open">Đọc nữa &rarr;</a>
+  {{/if}}
+</div>
