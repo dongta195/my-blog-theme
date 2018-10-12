@@ -16,7 +16,20 @@
        ga('send', 'pageview');
     </script>
    </head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <body>
+  <script>
+    $(document).ready(function() {
+      if(window.location.pathname == "/"){
+        $('.navigation').removeClass('display-none');
+        $('.site-name').removeClass('display-none');
+        $('.page-description').removeClass('display-none');
+      }
+    })
+  </script>
+    <p></p>
+
+
     {{> header }}
     {{ navigation }}
 

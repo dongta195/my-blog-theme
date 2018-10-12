@@ -3,18 +3,23 @@
 {{#post}}
   <article class="{{post_class}}">
     <header>
-      <div class="post meta">
-        <time datetime="{{date format="ddd, D MMMM, YYYY"}}" {{date format="ddd, D MMMM, YYYY"}}</time>
-        <span class="post tags">{{tags prefix="Trong " separator=" "}}</span>
-
-        {{!> post-author}}
-
-        <span class="post reading-time"> ~ <span></span> {{reading_time}}</span>
-      </div>
       <a title="Tweet '{{title}}'" href="https://twitter.com/intent/tweet?text={{encode title}}&amp;hashtags={{tags separator="," autolink="false"}}&amp;url={{url absolute="true"}}">
         {{#if feature_image}}<img id="post-image" src="{{img_url feature_image}}" alt="{{title}}">{{/if}}
         <h1 class="icon-reverse icon-social-twitter-post" id="post-title">{{title}}</h1>
       </a>
+      <div class="post--detail">
+        <div class="post__header">
+          <div class="post__metadata">Viết vào <time datetime="{{date format="ddd, DD MMM, YYYY"}}">{{date format="ddd, DD MMM, YYYY"}}</time></div>
+          <div class="post__tagging">
+            {{#foreach tags}}
+              <a href="{{url}}" title="{{name}}" class="post__tag">
+                #{{name}}
+              </a>
+            {{/foreach}}
+            <span class="post reading-time"> ~ <span></span> {{reading_time}}</span>
+          </div>
+        </div>
+      </div>
     </header>
 
     <div class="post__content" id="post_content">
