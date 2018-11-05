@@ -1,14 +1,44 @@
 {{!< default}}
 
-<h1 style="text-align: center;">Tag: {{tag.name}}.</h1>
-<ol id="posts-list">
-  {{#foreach posts}}
-  <li>
-    <time datetime="{{date format="DD MMM YYYY"}}">{{date format="DD MMM YYYY"}}</time>
-    <a href="{{url}}" title="Read more about '{{title}}'">{{title}}</a>
-    <span class="post tags">{{tags separator=" "}}</span>
-  </li>
-  {{/foreach}}
-</ol>
-
-{{pagination}}
+<div class="site">
+  <div class="site__content">
+    <div class="tag-page">
+      <h1 class="page-heading">#{{tag.name}}</h1>
+      {{#foreach posts}}
+      <!--<li>-->
+      <!--<time datetime="{{date format="DD MMM YYYY"}}">{{date format="DD MMM YYYY"}}</time>-->
+      <!--<a href="{{url}}" title="Read more about '{{title}}'">{{title}}</a>-->
+      <!--<span class="post tags">{{tags separator=" "}}</span>-->
+      <!--</li>-->
+        <div class="post">
+          <h3 class="post__title">
+            <a href="{{url}}">{{title}}</a>
+          </h3>
+          <div class="post__intro">
+            <p>{{excerpt}}</p>
+          </div>
+          <div class="post__metadata">
+            <time datetime="2018-08-17T11:15:28.105136Z" class="post__creation-date">{{date format="DD MMM YYYY"}}</time>
+            <span class="post__reading-time">{{reading_time}}</span>
+            <span class="tagging">
+              {{#if tags}}
+                {{#foreach tags}}
+                  <a href="{{url}}" title="{{name}}" class="tagging__item">#{{name}}</a>
+                {{/foreach}}
+              {{/if}}
+            </span>
+          </div>
+        </div>
+      {{/foreach}}
+      {{pagination}}
+      <div class="suggested-tags">
+        <h3>Tags</h3>
+        {{#get "tags" limit="all"}}
+          {{#foreach tags}}
+            <a class="tag" href="{{url}}">{{name}}</a>
+          {{/foreach}}
+        {{/get}}
+      </div>
+    </div>
+  </div>
+</div>
