@@ -1,13 +1,13 @@
 {{!< default}}
 
 {{#post}}
-  <article class="{{post_class}}">
+  <article class="{{post_class}} post--detail">
     <header>
       <a title="Tweet '{{title}}'" href="https://twitter.com/intent/tweet?text={{encode title}}&amp;hashtags={{tags separator="," autolink="false"}}&amp;url={{url absolute="true"}}">
         {{#if feature_image}}<img id="post-image" src="{{img_url feature_image}}" alt="{{title}}">{{/if}}
         <h1 class="icon-reverse icon-social-twitter-post" id="post-title">{{title}}</h1>
       </a>
-      <div class="post--detail">
+      <div class="">
         <div class="post__header">
           <div class="post__metadata">Viết vào <time datetime="{{date format="ddd, DD MMM, YYYY"}}">{{date format="ddd, DD MMM, YYYY"}}</time></div>
           <div class="post__tagging">
