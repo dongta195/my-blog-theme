@@ -19,7 +19,7 @@
           </div>
           <div class="post__metadata">
             <time datetime="2018-08-17T11:15:28.105136Z" class="post__creation-date">{{date format="DD MMM YYYY"}}</time>
-            <span class="post__reading-time">{{reading_time}}</span>
+            <span class="post__reading-time">{{reading_time minute=(t "1 phút đọc") minutes=(t "% phút đọc")}}</span>
             <span class="tagging">
               {{#if tags}}
                 {{#foreach tags}}
