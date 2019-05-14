@@ -1,7 +1,7 @@
 {{!< default}}
 
 {{#post}}
-  <article class="{{post_class}} post--detail">
+  <article class="{{post_class}} post--detail" style="padding-top: 0px;">
     <header>
       <a title="Tweet '{{title}}'" href="https://twitter.com/intent/tweet?text={{encode title}}&amp;hashtags={{tags separator="," autolink="false"}}&amp;url={{url absolute="true"}}">
         {{#if feature_image}}<img id="post-image" src="{{img_url feature_image}}" alt="{{title}}">{{/if}}
